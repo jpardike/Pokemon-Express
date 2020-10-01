@@ -12,7 +12,6 @@ app.set('view engine', 'ejs');
 const pokemon = require('./models/pokemon');
 
 // routes
-
 // index route
 app.get('/pokemon', (req, res) => {
   res.render('index', {
