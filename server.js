@@ -5,11 +5,16 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = 3000;
 
+// Set view engine
+app.set('view engine', 'ejs');
+
 // Pokemon model
-const pokemon = require('./pokemon');
+const pokemon = require('./models/pokemon');
 
 app.get('/pokemon', (req, res) => {
-  res.send(pokemon);
-})
+  res.render('index', {
+    pokemon: pokemon
+  });
+});
 
 app.listen(PORT, () => console.log(`Server started successfully on port ${PORT}`));
